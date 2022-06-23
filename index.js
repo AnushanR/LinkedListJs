@@ -1,5 +1,5 @@
  
-// Create the below linked list:
+// Creating the below linked list:
 // myLinkedList = {
 //   head: {
 //     value: 10
