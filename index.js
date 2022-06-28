@@ -58,6 +58,10 @@ class LinkedList {
   }
   // function to traverse through the linked list 
 traverse(index){
+
+  if (index > this.length){
+    return "sorry, that index is not in the list"
+  }
   let currentNode = this.head
   let counter = 0 
 
@@ -89,6 +93,24 @@ insert (index,value){
   
 }
 
+  delete(index){
+// TO DO: code edgecases
+      if (index > this.length){
+    return "sorry, that index is not in the list"
+      }
+    let nodeToDelete = this.traverse(index)
+    let nodePrior = this.traverse(index-1)
+    let nodeNext = nodeToDelete.next
+
+    nodeToDelete = nodePrior
+    nodeToDelete.next = nodeNext
+
+    return this.printList()
+
+    
+    
+  }
+
 printList() {
   const array = []
   let currentNode = this.head;
@@ -113,6 +135,7 @@ console.log(myLinkedList.printList())
 console.log(myLinkedList.traverse(3))
 console.log(myLinkedList.insert(3,55))
 console.log(myLinkedList.printList())
+console.log(myLinkedList.delete(2))
 
 
 
